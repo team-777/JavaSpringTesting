@@ -4,6 +4,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
 
 public class ChampionTest {
@@ -98,10 +101,15 @@ public class ChampionTest {
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
+    //name 혹은 property 를 속성으로 가지므로 name 으로 실험
+    //배열의 4번째 이름(속성) 은 베인인것을 test
+    //김수영
     @Test
     public void shouldHasPropertyPosition() {
-//        assertThat(championList.get(0), hasProperty("position"));
-//        assertThat(championList.get(0), hasProperty("position", equalTo("탑")));
+
+        assertThat(championList.get(3),hasProperty("name"));
+        assertThat(championList.get(3), hasProperty("name", is("베인")));
+
     }
 
     //hasToString 활용 테스트
