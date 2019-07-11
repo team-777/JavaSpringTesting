@@ -39,10 +39,14 @@ public class ChampionTest {
     }
 
     //notNullValue 활용한 테스트
+    //assert 단정문에서 null value 를 가지지 않는 것을 확인하는 assertNotNull() 를 이용해서 확인
+    //김수영
     @Test
     public void notNullCheck() {
+
         String lck = "LCK";
-//        assertThat(lck, notNullValue());
+        assertNotNull(lck);
+
     }
 
     //nullValue 활용한 테스트
