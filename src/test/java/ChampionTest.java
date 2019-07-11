@@ -90,13 +90,22 @@ public class ChampionTest {
 //        assertThat(championList, hasSize(5));
     }
 
-    //서폿 챔피언은 타릭이어야 한다라는 조건으로 테스트 코드 작성
+    //서폿 챔피언은 자이라이어야 한다는 조건으로 테스트 코드 작성
+    //assertThat, assertEquals, assertTrue의 assert 단정문을 이용하고
+    //hamcrest 에서 equalTo, hasToString 함수를 사용해서 서포트 챔피언 == 자이라 를 인증
+    //김수영
     @Test
-    public void shouldSupportChampionIsTaric() {
-        Champion supportChamp = new Champion("타릭", "바텀");
-//        assertThat("타릭", is(supportChamp.getName()));
-//        assertThat("타릭", is(equalTo(supportChamp.getName())));
-//        assertThat("타릭", equalTo(supportChamp.getName()));
+    public void shouldSupportChampionIsZyra() {
+        
+        Champion supportChamp = new Champion("자이라", "미드");
+
+        assertThat("자이라", is(supportChamp.getName()));
+        assertThat("자이라",is(equalTo(supportChamp.getName())));
+        assertThat("자이라",equalTo(supportChamp.getName()));
+        assertEquals(supportChamp.getName(),"자이라");
+        assertThat("자이라",hasToString(supportChamp.getName()));
+        assertTrue(supportChamp.getName()=="자이라");
+
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
