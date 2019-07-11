@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.hamcrest.Matchers.hasProperty;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 public class ChampionTest {
@@ -113,10 +112,15 @@ public class ChampionTest {
     }
 
     //hasToString 활용 테스트
+    //champListNames 의 배열에 들어가는 champion 이름을 인기 순 으로 나열해서 집어 넣고
+    //hasToString 을 사용해서 ToString 에서 값이 일치하는지 확인한다.
+    //김수영
     @Test
     public void shouldHaveSomeChampName() {
-        List<String> champListNames = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가느", "블라디미르");
-//        assertThat(champListNames.get(0), hasToString("루시안"));
+
+        List<String> champListNames = Arrays.asList("이즈리얼", "카이사", "럭스", "리신", "쓰레쉬", "뽀삐");
+        assertThat(champListNames.get(2), hasToString("럭스"));
+
     }
 
     //property와 value가 같은지 테스트
