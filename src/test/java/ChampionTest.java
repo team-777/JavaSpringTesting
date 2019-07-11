@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import static org.junit.Assert.*;
 
 public class ChampionTest {
     private List<Champion> championList = new ArrayList<Champion>();
@@ -27,10 +28,14 @@ public class ChampionTest {
     }
 
     //List<String>을 생성하고 값이 비어 있는지를 테스트 empty()
+    //assert 단정문중 assertTrue 를 이용해서 isEmpty() 함수로 이 조건이 참인지 확인
+    //김수영
     @Test
     public void givenCollectionWhenEmptyCorrect() {
+
         List<String> emptyList = new ArrayList<>();
-//        assertThat(emptyList, empty());
+        assertTrue(emptyList.isEmpty());
+
     }
 
     //notNullValue 활용한 테스트
