@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.*;
 
 public class UpperCaseCounterTest {
@@ -14,8 +15,9 @@ public class UpperCaseCounterTest {
     @Test
     public void getNumberOfUpperCaseCharactersInString_return_0_for_null_input(){
         String str = null;
+        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
 
-//        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(numberOfUpperCaseCharactersInString, equalTo(0));
     }
 
     //반겂울 전달했을 때 0을 리턴하는지에 대한 테스트 작성
