@@ -26,7 +26,7 @@ public class UpperCaseCounterTest {
         String str = "";
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
 
-        assertThat(numberOfUpperCaseCharactersInString, is(equalTo(0)));
+        assertThat(numberOfUpperCaseCharactersInString, is(equalTo(0)));    //201420894 김성규
     }
 
     //대문자들이 포함된 문자열을 전달했을 때 카운팅된 숫자와 맞는지 검증하는 테스트 작성
@@ -37,8 +37,15 @@ public class UpperCaseCounterTest {
         int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
 
         //assertTrue로 맞는 테스트 코드 작성
+        //assertTrue(numberOfUpperCaseCharactersInString == 10);
+
         //assertFalse로 틀리는 값을 넣어 테스트 작성
+        //assertFalse(numberOfUpperCaseCharactersInString == 9);
+
         //assertThat 단정문을 사용해서 True인 테스트 코드 작성
+        //assertThat(numberOfUpperCaseCharactersInString, is(10));
+
+        assertThat(numberOfUpperCaseCharactersInString, equalTo(0));    //201420894 김성규
     }
 
     //대소문자가 섞여 있을 때 정확히 카운팅 되는 지에 대한 테스트 코드 작성
