@@ -63,12 +63,12 @@ public class UpperCaseCounterTest {
         //assertThat 단정문을 사용해서 True인 테스트 코드 작성
         //assertThat(result, is(6));
 
-        assertThat(str, equalToIgnoringCase("ABCDEFGHI"));
+        assertThat(str, equalToIgnoringCase("ABCDEFGHI"));  //201420894 김성규
         System.out.println("result :: " + result);
     }
 
     //잘못된 값을 참조했을 때 IndexOutOfBoundsException Exception이 발생하는지 테스트 코드 작성
-    @Test
+    @Test (expected = IndexOutOfBoundsException.class)      //201420894 김성규
     public void shouldThrowExceptionWhenGetZeroIndex() {
         new ArrayList<Object>().get(0);
     }
