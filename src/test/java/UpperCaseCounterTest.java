@@ -4,7 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 public class UpperCaseCounterTest {
@@ -24,8 +24,9 @@ public class UpperCaseCounterTest {
     @Test
     public void getNumberOfUpperCaseCharactersInString_return_0_for_empty_input() {
         String str = "";
+        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
 
-//        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(numberOfUpperCaseCharactersInString, is(equalTo(0)));
     }
 
     //대문자들이 포함된 문자열을 전달했을 때 카운팅된 숫자와 맞는지 검증하는 테스트 작성
