@@ -65,6 +65,9 @@ public class ChampionTest {
         String sampleString2 = "Player point";
         String startString = "Player";
         String endString = "point";
+        assertThat(sampleString1, anyOf(endsWith(endString), containsString(endString), containsString(startString)));
+        assertThat(sampleString2, anyOf(endsWith(endString), endsWith("aaa")));
+        assertThat(sampleString2, is(startsWith(startString)));
 
     }
 
