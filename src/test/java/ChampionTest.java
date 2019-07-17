@@ -86,7 +86,12 @@ public class ChampionTest {
     //anything 테스트
     @Test
     public void shouldNotErrorGetReference() {
-
+        assertThat("a", anything());
+        assertThat("aaa", anything());
+        assertThat(championList.get(1),anything());
+        assertThat(anything(), anything());
+        assertFalse(championList.get(1).equals(anything()));
+        assertFalse(nullValue() == anything());
 
 //        assertThat(championList.get(2), anything());
     }
