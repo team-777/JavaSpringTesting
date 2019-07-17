@@ -48,10 +48,12 @@ public class ChampionTest {
     //nullValue 활용한 테스트
     @Test
     public void givenStringWhenNullIsCorrect() {
+
         String lck = null;
         assertThat(lck, is(nullValue()));
         assertThat(null, is(nullValue()));
         assertNull(lck);
+
 //        assertThat(lck, nullValue());
     }
 
@@ -63,9 +65,6 @@ public class ChampionTest {
         String sampleString2 = "Player point";
         String startString = "Player";
         String endString = "point";
-        assertThat(sampleString1, anyOf(endsWith(endString), containsString(endString), containsString(startString)));
-        assertThat(sampleString2, anyOf(endsWith(endString), endsWith("aaa")));
-        assertThat(sampleString2, is(startsWith(startString)));
 
     }
 
@@ -73,9 +72,7 @@ public class ChampionTest {
     @Test
     public void testForFloatingPoint() {
 
-        double num= 5.0;
-        assertThat(2.0, closeTo(1.9999, 0.1));
-        assertThat(num, is(closeTo(4.8, 0.3)));
+
 
 //        assertThat(3.14, closeTo(3, 0.2));
     }
@@ -84,12 +81,7 @@ public class ChampionTest {
     @Test
     public void shouldNotErrorGetReference() {
 
-        assertThat("a", anything());
-        assertThat("aaa", anything());
-        assertThat(championList.get(1),anything());
-        assertThat(anything(), anything());
-        assertFalse(championList.get(1).equals(anything()));
-        assertFalse(nullValue() == anything());
+
 //        assertThat(championList.get(2), anything());
     }
 
@@ -97,10 +89,7 @@ public class ChampionTest {
     @Test
     public void shouldChampionCountFive() {
 
-        assertFalse(championList.size()==4);
-        assertTrue(championList.size()>3);
-        assertTrue(championList.size()<130);
-        assertThat(championList, hasSize(lessThan(10)));
+
 //        assertTrue(championList.size() == 5);
 //        assertThat(championList.size(), is(5));
 //        assertThat(championList, hasSize(5));
