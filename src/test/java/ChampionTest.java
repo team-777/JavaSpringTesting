@@ -75,6 +75,9 @@ public class ChampionTest {
     @Test
     public void testForFloatingPoint() {
 
+        double num= 5.0;
+        assertThat(2.0, closeTo(1.9999, 0.1));
+        assertThat(num, is(closeTo(4.8, 0.3)));
 
 
 //        assertThat(3.14, closeTo(3, 0.2));
