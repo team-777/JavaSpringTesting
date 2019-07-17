@@ -99,7 +99,10 @@ public class ChampionTest {
     //객체 크기 검증 테스트 hasSize
     @Test
     public void shouldChampionCountFive() {
-
+        assertFalse(championList.size()==4);
+        assertTrue(championList.size()>3);
+        assertTrue(championList.size()<130);
+        assertThat(championList, hasSize(lessThan(10)));
 
 //        assertTrue(championList.size() == 5);
 //        assertThat(championList.size(), is(5));
