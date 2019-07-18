@@ -48,6 +48,8 @@ public class CustomCalculatorTest {
         customCalculator = new CustomCalculator();
         int result = customCalculator.divide(25,5);
         /* 이곳에 테스트 코드를 작성하세요. */
+        result = customCalculator.divide(121,11);
+        assertThat(result,is(11));  //201520969 이재형
         System.out.println("result :: " + result);
     }
 }
