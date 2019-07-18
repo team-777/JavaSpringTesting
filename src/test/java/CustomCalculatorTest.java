@@ -37,6 +37,8 @@ public class CustomCalculatorTest {
         customCalculator = new CustomCalculator();
         int result = customCalculator.multiply(5,9);
         /* 이곳에 테스트 코드를 작성하세요. */
+        result = customCalculator.multiply(42, 7);
+        assertThat(result, is(294));  //201520969 이재형
         System.out.println("result :: " + result);
     }
 
