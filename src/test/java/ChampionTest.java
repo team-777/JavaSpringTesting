@@ -61,6 +61,7 @@ public class ChampionTest {
 
     }
 
+    //전혜진
     //nullValue 활용한 테스트
     @Test
     public void givenStringWhenNullIsCorrect() {
@@ -74,6 +75,7 @@ public class ChampionTest {
     }
 
 
+    //전혜진
     //문자열 관련 테스트 anyOf, containsString, endWith
     @Test
     public void testForRelatedString() {
@@ -87,6 +89,7 @@ public class ChampionTest {
 
     }
 
+    //전혜진
     //부동소수점 범위 closeTo 테스트
     @Test
     public void testForFloatingPoint() {
@@ -99,6 +102,7 @@ public class ChampionTest {
 //        assertThat(3.14, closeTo(3, 0.2));
     }
 
+    //전혜진
     //anything 테스트
     @Test
     public void shouldNotErrorGetReference() {
@@ -112,6 +116,7 @@ public class ChampionTest {
 //        assertThat(championList.get(2), anything());
     }
 
+    //전혜진
     //객체 크기 검증 테스트 hasSize
     @Test
     public void shouldChampionCountFive() {
