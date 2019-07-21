@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.*;
+
 public class ChampionTest {
     private List<Champion> championList = new ArrayList<Champion>();
 
@@ -27,17 +30,25 @@ public class ChampionTest {
     }
 
     //List<String>을 생성하고 값이 비어 있는지를 테스트 empty()
+    //assert 단정문중 assertTrue 를 이용해서 isEmpty() 함수로 이 조건이 참인지 확인
+    //김수영
     @Test
     public void givenCollectionWhenEmptyCorrect() {
+
         List<String> emptyList = new ArrayList<>();
-//        assertThat(emptyList, empty());
+        assertTrue(emptyList.isEmpty());
+
     }
 
     //notNullValue 활용한 테스트
+    //assert 단정문에서 null value 를 가지지 않는 것을 확인하는 assertNotNull() 를 이용해서 확인
+    //김수영
     @Test
     public void notNullCheck() {
+
         String lck = "LCK";
-//        assertThat(lck, notNullValue());
+        assertNotNull(lck);
+
     }
 
     //nullValue 활용한 테스트
@@ -79,27 +90,46 @@ public class ChampionTest {
 //        assertThat(championList, hasSize(5));
     }
 
-    //서폿 챔피언은 타릭이어야 한다라는 조건으로 테스트 코드 작성
+    //서폿 챔피언은 자이라이어야 한다는 조건으로 테스트 코드 작성
+    //assertThat, assertEquals, assertTrue의 assert 단정문을 이용하고
+    //hamcrest 에서 equalTo, hasToString 함수를 사용해서 서포트 챔피언 == 자이라 를 인증
+    //김수영
     @Test
-    public void shouldSupportChampionIsTaric() {
-        Champion supportChamp = new Champion("타릭", "바텀");
-//        assertThat("타릭", is(supportChamp.getName()));
-//        assertThat("타릭", is(equalTo(supportChamp.getName())));
-//        assertThat("타릭", equalTo(supportChamp.getName()));
+    public void shouldSupportChampionIsZyra() {
+        
+        Champion supportChamp = new Champion("자이라", "미드");
+
+        assertThat("자이라", is(supportChamp.getName()));
+        assertThat("자이라",is(equalTo(supportChamp.getName())));
+        assertThat("자이라",equalTo(supportChamp.getName()));
+        assertEquals(supportChamp.getName(),"자이라");
+        assertThat("자이라",hasToString(supportChamp.getName()));
+        assertTrue(supportChamp.getName()=="자이라");
+
     }
 
     //hasProperty 활용하여 속성이 포함되어 있는지 테스트
+    //name 혹은 property 를 속성으로 가지므로 name 으로 실험
+    //배열의 4번째 이름(속성) 은 베인인것을 test
+    //김수영
     @Test
     public void shouldHasPropertyPosition() {
-//        assertThat(championList.get(0), hasProperty("position"));
-//        assertThat(championList.get(0), hasProperty("position", equalTo("탑")));
+
+        assertThat(championList.get(3),hasProperty("name"));
+        assertThat(championList.get(3), hasProperty("name", is("베인")));
+
     }
 
     //hasToString 활용 테스트
+    //champListNames 의 배열에 들어가는 champion 이름을 인기 순 으로 나열해서 집어 넣고
+    //hasToString 을 사용해서 ToString 에서 값이 일치하는지 확인한다.
+    //김수영
     @Test
     public void shouldHaveSomeChampName() {
-        List<String> champListNames = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가느", "블라디미르");
-//        assertThat(champListNames.get(0), hasToString("루시안"));
+
+        List<String> champListNames = Arrays.asList("이즈리얼", "카이사", "럭스", "리신", "쓰레쉬", "뽀삐");
+        assertThat(champListNames.get(2), hasToString("럭스"));
+
     }
 
     //property와 value가 같은지 테스트
