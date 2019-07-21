@@ -4,6 +4,11 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+
+import static junit.framework.Assert.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -137,12 +142,17 @@ public class ChampionTest {
     public void shouldHaveSamePropertyAndValue() {
         List<String> championNames1 = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
         List<String> championNames2 = Arrays.asList("루시안", "애쉬", "렉사이", "갈리오", "모르가나", "블라디미르");
+        assertThat(championNames1, is(championNames2)); //201520969 이재형
 //        assertThat(championNames1, samePropertyValuesAs(championNames2));
     }
 
     //탑 챔피언은 다리우스여야 한다라는 조건으로 테스트 코드 작성, stream 활용예
     @Test
     public void shouldTopChampionIsDarius() {
+        Optional<Champion> filterdChampion = championList.stream().filter(c -> c.getPosition().equals("바텀")).findFirst();
+        String champName = filterdChampion.get().getName();
+        assertTrue(champName.equals("베인"));
+        assertThat("베인",is(champName)); //201520969 이재형
 //        Optional<Champion> filterdChampion = championList.stream()
 //                .filter(c -> c.getPosition().equals("탑"))
 //                .findFirst();
